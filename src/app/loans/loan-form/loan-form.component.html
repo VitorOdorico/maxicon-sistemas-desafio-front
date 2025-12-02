@@ -1,6 +1,7 @@
-<h2>{{ isEdit ? 'Editar Empréstimo' : 'Cadastrar Empréstimo' }}</h2>
+
 
 <form [formGroup]="form" (ngSubmit)="save()">
+  <h2>{{ isEdit ? 'Editar Empréstimo' : 'Cadastrar Empréstimo' }}</h2>
   <div>
     <label>Codigo do cliente(ID):</label>
     <input type="number" formControlName="customerId" required>
