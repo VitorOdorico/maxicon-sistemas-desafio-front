@@ -1,4 +1,4 @@
-<h2>Lista de Empréstimos</h2>
+<h2 style="color: #1976D2;">Lista de Empréstimos</h2>
 
 <div *ngIf="loading">Carregando...</div>
 
@@ -36,13 +36,16 @@
 <td>{{ l.finalAmount }}</td>
 
 
-      <td>{{ l.paid ? 'Sim' : 'Não' }}</td>
-      <td>
-        <button (click)="goToDetails(l.id)">Detalhes</button>
-        <button *ngIf="!l.paid" (click)="markAsPaid(l.id)">Dar como Pago</button>
-        <button (click)="goToEdit(l.id)">Editar</button>
-        <button (click)="deleteLoan(l.id)">Excluir</button>
-      </td>
+    <td [ngClass]="l.paid ? 'paid-true' : 'paid-false'">
+  {{ l.paid ? 'Sim' : 'Não' }}
+</td>
+<td class="btns">
+  <button class="btn-details" (click)="goToDetails(l.id)">Detalhes</button>
+  <button class="btn-edit" (click)="goToEdit(l.id)">Editar</button>
+  <button class="btn-delete" (click)="deleteLoan(l.id)">Excluir</button>
+   <button *ngIf="!l.paid" class="btn-paid" (click)="markAsPaid(l.id)">Dar como Pago</button>
+</td>
+
     </tr>
   </tbody>
 </table>

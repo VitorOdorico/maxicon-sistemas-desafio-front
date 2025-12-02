@@ -1,15 +1,23 @@
-<h2>Detalhes do Empréstimo</h2>
+
 
 <div *ngIf="loading">Carregando...</div>
 
 <div *ngIf="!loading && loan">
+  <h2>Detalhes do Empréstimo</h2>
   <p><strong>ID:</strong> {{ loan.id }}</p>
   <p><strong>Cliente ID:</strong> {{ loan.customerId }}</p>
   <p><strong>Data:</strong> {{ loan.loanDate }}</p>
   <p><strong>Vencimento:</strong> {{ loan.dueDate }}</p>
   <p><strong>Moeda:</strong> {{ loan.currency }}</p>
-  <p><strong>Valor:</strong> {{ loan.amount }}</p>
-  <p><strong>Pago:</strong> {{ loan.paid ? 'Sim' : 'Não' }}</p>
+  <p><strong>Valor em <b>{{loan.currency}}</b>:</strong> {{ loan.amount }}</p>
+  <p><strong>Valor a pagar :</strong> {{ loan.finalAmount }}</p>
+ <p>
+  <strong>Pago:</strong>
+  <span [ngClass]="{'paid-status true': loan.paid, 'paid-status false': !loan.paid}">
+    {{ loan.paid ? 'Sim' : 'Não' }}
+  </span>
+</p>
+
 
   <button (click)="goBack()">Voltar</button>
 </div>

@@ -1,7 +1,7 @@
-<h2>Detalhes do Cliente</h2>
+
 
 <div *ngIf="customer">
-
+  <h2>Detalhes do Cliente</h2>
   <p><strong>ID:</strong> {{ customer.id }}</p>
 
   <p><strong>Nome Completo:</strong>
@@ -31,7 +31,8 @@
 
   <br />
 
-  <button (click)="edit()">Editar</button>
-  <button (click)="goBack()">Voltar</button>
+  <button class="btn-primary" (click)="edit()">Editar</button>
+<button class="btn-secondary" (click)="goBack()">Voltar</button>
+
 
 </div>

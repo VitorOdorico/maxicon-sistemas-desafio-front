@@ -1,4 +1,4 @@
-<h2>Lista de Customers</h2>
+<h2>Lista de Clientes</h2>
 
 <div *ngIf="loading">Carregando...</div>
 
@@ -21,12 +21,13 @@
       <td>{{ c.document }}</td>
       <td>{{ c.email }}</td>
       <td>{{ c.phone }}</td>
-      <td>
-        <button (click)="goToDetails(c.id)">Detalhes</button>
-        <button (click)="goToEdit(c.id)">Editar</button>
-        <button (click)="deleteCustomer(c.id)">Excluir</button>
-        <button (click)="goToCreateLoan(c.id)">Criar Empréstimo</button> <!-- NOVO -->
-      </td>
+     <td>
+  <button class="btn-primary" (click)="goToDetails(c.id)">Detalhes</button>
+  <button class="btn-primary" (click)="goToEdit(c.id)">Editar</button>
+  <button class="btn-danger" (click)="deleteCustomer(c.id)">Excluir</button>
+  <button class="btn-warning" (click)="goToCreateLoan(c.id)">Criar Empréstimo</button>
+</td>
+
     </tr>
   </tbody>
 </table>

@@ -1,0 +1,78 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  margin-top: 2rem;
+
+  th, td {
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+
+  thead {
+    background-color: #1976D2;
+    color: #fff;
+
+    th {
+      font-weight: bold;
+    }
+  }
+
+  tbody tr {
+    &:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+
+    td {
+      button {
+        margin: 0 3px;
+        padding: 6px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        color: #fff;
+        transition: all 0.2s;
+
+        &:hover {
+          opacity: 0.9;
+        }
+
+        &.btn-details {
+          background-color: #1976D2;
+        }
+
+        &.btn-paid {
+          background-color: #4CAF50;
+        }
+
+        &.btn-edit {
+          background-color: #FFC107;
+        }
+
+        &.btn-delete {
+          background-color: #F44336;
+        }
+      }
+    }
+  }
+
+  .paid-true {
+    color: #4CAF50;
+    font-weight: bold;
+  }
+
+  .paid-false {
+    color: #F44336;
+    font-weight: bold;
+  }
+  .btns{
+    text-align: left;
+  }
+}

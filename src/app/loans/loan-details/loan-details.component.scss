@@ -1,0 +1,94 @@
+div {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+
+  h2 {
+    text-align: center;
+    color: #1976D2;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+
+    strong {
+      color: #333;
+      width: 150px;
+      display: inline-block;
+    }
+
+    span {
+      color: #555;
+    }
+  }
+
+  p:nth-child(7) strong {
+    // estiliza o campo "Pago" com cores
+    color: #333;
+  }
+
+  p:nth-child(7) {
+    span {
+      color: inherit;
+    }
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #1976D2;
+    color: #fff;
+    margin-top: 1rem;
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  // Mensagem de empréstimo não encontrado
+  div p {
+    text-align: center;
+    color: #f44336;
+    font-weight: bold;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+
+    p {
+      font-size: 0.9rem;
+
+      strong {
+        width: 120px;
+      }
+    }
+
+    button {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// Para o status pago/não pago, podemos usar classes dinamicamente
+.paid-status {
+  &.true {
+    color: #4CAF50; // verde
+    font-weight: bold;
+  }
+
+  &.false {
+    color: #F44336; // vermelho
+    font-weight: bold;
+  }
+}

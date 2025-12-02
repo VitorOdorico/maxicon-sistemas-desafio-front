@@ -1,7 +1,7 @@
-<h2>{{ isEdit ? 'Editar Cliente' : 'Cadastrar Cliente' }}</h2>
+
 
 <form [formGroup]="form" (ngSubmit)="save()">
-
+  <h2>{{ isEdit ? 'Editar Cliente' : 'Cadastrar Cliente' }}</h2>
   <div>
     <label>Primeiro Nome:</label>
     <input type="text" formControlName="firstName" required>
@@ -29,12 +29,13 @@
 
   <br>
 
-  <button type="submit" [disabled]="form.invalid">
-    {{ isEdit ? 'Salvar Alterações' : 'Cadastrar' }}
-  </button>
+<button type="submit" class="btn-primary" [disabled]="form.invalid">
+  {{ isEdit ? 'Salvar Alterações' : 'Cadastrar' }}
+</button>
 
-  <button type="button" (click)="goBack()">
-    Voltar
-  </button>
+<button type="button" class="btn-secondary" (click)="goBack()">
+  Voltar
+</button>
+
 
 </form>
