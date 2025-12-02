@@ -1,0 +1,20 @@
+<h2>Detalhes do Empréstimo</h2>
+
+<div *ngIf="loading">Carregando...</div>
+
+<div *ngIf="!loading && loan">
+  <p><strong>ID:</strong> {{ loan.id }}</p>
+  <p><strong>Cliente ID:</strong> {{ loan.customerId }}</p>
+  <p><strong>Data:</strong> {{ loan.loanDate }}</p>
+  <p><strong>Vencimento:</strong> {{ loan.dueDate }}</p>
+  <p><strong>Moeda:</strong> {{ loan.currency }}</p>
+  <p><strong>Valor:</strong> {{ loan.amount }}</p>
+  <p><strong>Pago:</strong> {{ loan.paid ? 'Sim' : 'Não' }}</p>
+
+  <button (click)="goBack()">Voltar</button>
+</div>
+
+<div *ngIf="!loading && !loan">
+  <p>Empréstimo não encontrado.</p>
+  <button (click)="goBack()">Voltar</button>
+</div>

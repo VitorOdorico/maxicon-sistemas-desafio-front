@@ -1,0 +1,37 @@
+<h2>{{ isEdit ? 'Editar Empréstimo' : 'Cadastrar Empréstimo' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="save()">
+  <div>
+    <label>Codigo do cliente(ID):</label>
+    <input type="number" formControlName="customerId" required>
+  </div>
+
+  <div>
+    <label>Data de solicitação do empréstimo:</label>
+    <input type="date" formControlName="loanDate" required>
+  </div>
+
+  <div>
+    <label>Data de fim do empréstimo:</label>
+    <input type="date" formControlName="dueDate" required>
+  </div>
+
+  <div>
+    <label>Moeda:</label>
+    <select formControlName="currency" required>
+      <option value="" disabled selected>Selecione a moeda</option>
+      <option *ngFor="let c of currencies" [value]="c">{{ c }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Valor:</label>
+    <input type="number" formControlName="amount" required>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">
+    {{ isEdit ? 'Salvar Alterações' : 'Cadastrar' }}
+  </button>
+
+  <button type="button" (click)="goBack()">Voltar</button>
+</form>

@@ -1,0 +1,37 @@
+<h2>Detalhes do Cliente</h2>
+
+<div *ngIf="customer">
+
+  <p><strong>ID:</strong> {{ customer.id }}</p>
+
+  <p><strong>Nome Completo:</strong>
+    {{ customer.firstName }} {{ customer.lastName }}
+  </p>
+
+  <p><strong>Documento:</strong>
+    {{ customer.document }}
+  </p>
+
+  <p><strong>Email:</strong>
+    {{ customer.email }}
+  </p>
+
+  <p><strong>Telefone:</strong>
+    {{ customer.phone }}
+  </p>
+
+  <p><strong>Criado em:</strong>
+    {{ customer.createdAt | date: 'dd/MM/yyyy HH:mm' }}
+  </p>
+
+  <p *ngIf="customer.updatedAt">
+    <strong>Atualizado em:</strong>
+    {{ customer.updatedAt | date: 'dd/MM/yyyy HH:mm' }}
+  </p>
+
+  <br />
+
+  <button (click)="edit()">Editar</button>
+  <button (click)="goBack()">Voltar</button>
+
+</div>

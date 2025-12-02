@@ -1,0 +1,32 @@
+<h2>Lista de Customers</h2>
+
+<div *ngIf="loading">Carregando...</div>
+
+<table *ngIf="!loading" border="1" cellpadding="8" width="100%">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Documento</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let c of customers">
+      <td>{{ c.id }}</td>
+      <td>{{ c.firstName }} {{ c.lastName }}</td>
+      <td>{{ c.document }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.phone }}</td>
+      <td>
+        <button (click)="goToDetails(c.id)">Detalhes</button>
+        <button (click)="goToEdit(c.id)">Editar</button>
+        <button (click)="deleteCustomer(c.id)">Excluir</button>
+        <button (click)="goToCreateLoan(c.id)">Criar Empréstimo</button> <!-- NOVO -->
+      </td>
+    </tr>
+  </tbody>
+</table>

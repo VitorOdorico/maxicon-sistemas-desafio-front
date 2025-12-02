@@ -1,0 +1,48 @@
+<h2>Lista de Empréstimos</h2>
+
+<div *ngIf="loading">Carregando...</div>
+
+<table *ngIf="!loading" border="1" cellpadding="8" width="100%">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cliente ID</th>
+      <th>Data</th>
+      <th>Vencimento</th>
+      <th>Moeda</th>
+      <th>Valor</th>
+      <th>Exchange Rate</th>
+<th>Valor em BRL</th>
+<th>Meses</th>
+<th>Valor Final</th>
+
+      <th>Pago</th>
+      <th>Ações</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let l of loans">
+      <td>{{ l.id }}</td>
+      <td>{{ l.customerId }}</td>
+      <td>{{ l.loanDate }}</td>
+      <td>{{ l.dueDate }}</td>
+      <td>{{ l.currency }}</td>
+      <td>{{ l.amount }}</td>
+      <td>{{ l.exchangeRate }}</td>
+<td>{{ l.amountInBRL }}</td>
+<td>{{ l.months }}</td>
+<td>{{ l.finalAmount }}</td>
+
+
+      <td>{{ l.paid ? 'Sim' : 'Não' }}</td>
+      <td>
+        <button (click)="goToDetails(l.id)">Detalhes</button>
+        <button *ngIf="!l.paid" (click)="markAsPaid(l.id)">Dar como Pago</button>
+        <button (click)="goToEdit(l.id)">Editar</button>
+        <button (click)="deleteLoan(l.id)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

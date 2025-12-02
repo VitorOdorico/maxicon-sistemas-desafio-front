@@ -1,0 +1,40 @@
+<h2>{{ isEdit ? 'Editar Cliente' : 'Cadastrar Cliente' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="save()">
+
+  <div>
+    <label>Primeiro Nome:</label>
+    <input type="text" formControlName="firstName" required>
+  </div>
+
+  <div>
+    <label>Sobrenome:</label>
+    <input type="text" formControlName="lastName" required>
+  </div>
+
+  <div>
+    <label>Documento:</label>
+    <input type="text" formControlName="document" required>
+  </div>
+
+  <div>
+    <label>Email:</label>
+    <input type="email" formControlName="email" required>
+  </div>
+
+  <div>
+    <label>Telefone:</label>
+    <input type="text" formControlName="phone" required>
+  </div>
+
+  <br>
+
+  <button type="submit" [disabled]="form.invalid">
+    {{ isEdit ? 'Salvar Alterações' : 'Cadastrar' }}
+  </button>
+
+  <button type="button" (click)="goBack()">
+    Voltar
+  </button>
+
+</form>
